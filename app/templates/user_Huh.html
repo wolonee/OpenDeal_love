@@ -1,0 +1,243 @@
+
+{% extends 'Main.html' %}
+
+{% if NonePositions %}
+  {{ NonePositions }}
+{% endif %}
+
+
+{% block conteiner_1 %}
+  {% if last_list['TokenName'][0] %}
+    {% if last_list['Fix_or_not'][0] == 1 %}
+    <div class="conteiner_1" style="background-color: rgba(32, 178, 108, 0.5); box-shadow: 0px 0px 30px 30px rgba(32, 178, 108, 0.5);">
+      <p class="font_LEMON_MILK" style="position: absolute; margin-top: 75px; font-size: 4.5vw;">Take Profit!</p>
+      <div class="all_token_info" style="opacity: 0.4;">
+    {% elif last_list['Fix_or_not'][0] == 0 %}
+    <div class="conteiner_1" style="background-color: rgba(239, 69, 74, 0.5); box-shadow: 0px 0px 30px 30px rgba(239, 69, 74, 0.5);">
+      <p class="font_LEMON_MILK" style="position: absolute; margin-top: 75px; font-size: 4.5vw;">Stop Loss!</p>
+      <div class="all_token_info" style="opacity: 0.4;">
+    {% else %}
+    <div class="conteiner_1"">
+      <div class="all_token_info">
+    {% endif %}
+        <div class="all_start_position_info">
+          <div class="token_position_Leverage">
+            <div class="token_and_position">
+              <div class="font_LEMON_MILK" style="font-size: 4vw;"> {{ last_list['TokenName'][0] }} </div>     <!-- TOKEN NAME -->
+              {% if last_list['LongOrShort'][0] == "Long" %}
+                <div class="font_LEMON_MILK_LongShort" style="background-color: #20b26c; color: #fff;"> {{ last_list['LongOrShort'][0] }} </div> 
+              {% else %}
+                <div class="font_LEMON_MILK_LongShort" style="background-color: #ef454a; color: #fff;"> {{ last_list['LongOrShort'][0] }} </div>
+              {% endif %}     <!-- LONG or SHORT -->
+            </div>
+            <div class="Leverage">
+              <div class="font_size_LEMON_MILK">Cross {{ last_list['Leverage'][0] }}x</div>  <!-- Leverage -->
+            </div>
+          </div>
+
+
+          <div class="start_and_mark">
+
+            <div class="start_price">
+              <div class="font_size_LEMON_MILK"> Start Place </div>   
+              <div class="mini-border"></div>
+              <div class="num_size_LEMON_MILK"> {{ last_list['StartPlace'][0] }} </div>     <!-- START PLACE -->
+            </div>
+
+            <div class="mark_price">
+              <div class="font_size_LEMON_MILK"> Mark Price </div>
+              <div class="mini-border"></div>
+              <div class="num_size_LEMON_MILK"> {{ last_list['MarkPrice'][0] }} </div>     <!-- MARK PRICE -->
+            </div>
+          </div>
+        </div>
+
+        <div class="result_info">
+
+          <div class="procent">
+          {% if last_list['Procent'][0] != None %}
+            {% if last_list['Procent'][0] >= 0 %}
+              <div class="font_LEMON_MILK" style="font-size: 4vw; color: #20b26c;">{{ last_list['Procent'][0] }}%</div>
+            {% else %}
+              <div class="font_LEMON_MILK" style="font-size: 4vw; color: #ef454a;">{{ last_list['Procent'][0] }}%</div>
+            {% endif %}     <!-- LONG or SHORT -->
+          {% else %}
+            <div class="font_LEMON_MILK" style="font-size: 4vw;">{{ last_list['Procent'][0] }}</div>
+          {% endif %}
+          </div>
+
+          <div class="end_positions">
+            <div class="stop_loss">
+              <div class="font_size_LEMON_MILK">Stop Loss</div>
+              <div class="mini-border"></div>
+              <div class="num_size_LEMON_MILK" style="color: #ef454a;">{{ last_list['StopLoss'][0] }}</div>
+            </div>
+            <div class="take_profit">
+              <div class="font_size_LEMON_MILK">Take Profit</div>
+              <div class="mini-border"></div>
+              <div class="num_size_LEMON_MILK" style="color: #20b26c;">{{ last_list['TakeProfit'][0] }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block conteiner_2 %}
+  {% if last_list['TokenName'][1] %}
+  <div class="conteiner-border"></div>
+    {% if last_list['Fix_or_not'][1] == 1 %}
+    <div class="conteiner_2" style="background-color: rgba(32, 178, 108, 0.5); box-shadow: 0px 0px 30px 30px rgba(32, 178, 108, 0.5);">
+      <p class="font_LEMON_MILK" style="position: absolute; margin-top: 75px; font-size: 4.5vw;">Take Profit!</p>
+      <div class="all_token_info" style="opacity: 0.4;">
+    {% elif last_list['Fix_or_not'][1] == 0 %}
+    <div class="conteiner_2" style="background-color: rgba(239, 69, 74, 0.5); box-shadow: 0px 0px 30px 30px rgba(239, 69, 74, 0.5);">
+      <p class="font_LEMON_MILK" style="position: absolute; margin-top: 75px; font-size: 4.5vw;">Stop Loss!</p>
+      <div class="all_token_info" style="opacity: 0.4;">
+    {% else %}
+    <div class="conteiner_2">
+      <div class="all_token_info">
+    {% endif %}
+        <div class="all_start_position_info">
+          <div class="token_position_Leverage">
+            <div class="token_and_position">
+              <div class="font_LEMON_MILK" style="font-size: 4vw;"> {{ last_list['TokenName'][1] }} </div>     <!-- TOKEN NAME -->
+              {% if last_list['LongOrShort'][1] == "Long" %}
+                <div class="font_LEMON_MILK_LongShort" style="background-color: #20b26c; color: #fff;"> {{ last_list['LongOrShort'][1] }} </div> 
+              {% else %}
+                <div class="font_LEMON_MILK_LongShort" style="background-color: #ef454a; color: #fff;"> {{ last_list['LongOrShort'][1] }} </div>
+              {% endif %}     <!-- LONG or SHORT -->
+            </div>
+            <div class="Leverage">
+              <div class="font_size_LEMON_MILK">Cross {{ last_list['Leverage'][1] }}x</div>  <!-- Leverage -->
+            </div>
+          </div>
+
+
+          <div class="start_and_mark">
+
+            <div class="start_price">
+              <div class="font_size_LEMON_MILK"> Start Place </div>   
+              <div class="mini-border"></div>
+              <div class="num_size_LEMON_MILK"> {{ last_list['StartPlace'][1] }} </div>     <!-- START PLACE -->
+            </div>
+
+            <div class="mark_price">
+              <div class="font_size_LEMON_MILK"> Mark Price </div>
+              <div class="mini-border"></div>
+              <div class="num_size_LEMON_MILK"> {{ last_list['MarkPrice'][1] }} </div>     <!-- MARK PRICE -->
+            </div>
+          </div>
+        </div>
+
+        <div class="result_info">
+
+          <div class="procent">
+          {% if last_list['Procent'][1] != None %}
+            {% if last_list['Procent'][1] >= 0 %}
+              <div class="font_LEMON_MILK" style="font-size: 4vw; color: #20b26c;">{{ last_list['Procent'][1] }}%</div>
+            {% else %}
+              <div class="font_LEMON_MILK" style="font-size: 4vw; color: #ef454a;">{{ last_list['Procent'][1] }}%</div>
+            {% endif %}     <!-- LONG or SHORT -->
+          {% else %}
+            <div class="font_LEMON_MILK" style="font-size: 4vw;">{{ last_list['Procent'][1] }}</div>
+          {% endif %}
+          </div>
+
+          <div class="end_positions">
+            <div class="stop_loss">
+              <div class="font_size_LEMON_MILK">Stop Loss</div>
+              <div class="mini-border"></div>
+              <div class="num_size_LEMON_MILK" style="color: #ef454a;">{{ last_list['StopLoss'][1] }}</div>
+            </div>
+            <div class="take_profit">
+              <div class="font_size_LEMON_MILK">Take Profit</div>
+              <div class="mini-border"></div>
+              <div class="num_size_LEMON_MILK" style="color: #20b26c;">{{ last_list['TakeProfit'][1] }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block conteiner_3 %}
+  {% if last_list['TokenName'][2] %}
+  <div class="conteiner-border"></div>
+    {% if last_list['Fix_or_not'][2] == 1 %}
+    <div class="conteiner_3" style="background-color: rgba(32, 178, 108, 0.5); box-shadow: 0px 0px 30px 30px rgba(32, 178, 108, 0.5);">
+      <p class="font_LEMON_MILK" style="position: absolute; margin-top: 75px; font-size: 4.5vw;">Take Profit!</p>
+      <div class="all_token_info" style="opacity: 0.4;">
+    {% elif last_list['Fix_or_not'][2] == 0 %}
+    <div class="conteiner_3" style="background-color: rgba(239, 69, 74, 0.5); box-shadow: 0px 0px 30px 30px rgba(239, 69, 74, 0.5);">
+      <p class="font_LEMON_MILK" style="position: absolute; margin-top: 75px; font-size: 4.5vw;">Stop Loss!</p>
+      <div class="all_token_info" style="opacity: 0.4;">
+    {% else %}
+    <div class="conteiner_3"">
+      <div class="all_token_info">
+    {% endif %}
+        <div class="all_start_position_info">
+          <div class="token_position_Leverage">
+            <div class="token_and_position">
+              <div class="font_LEMON_MILK" style="font-size: 4vw;"> {{ last_list['TokenName'][2] }} </div>     <!-- TOKEN NAME -->
+              {% if last_list['LongOrShort'][2] == "Long" %}
+                <div class="font_LEMON_MILK_LongShort" style="background-color: #20b26c; color: #fff;"> {{ last_list['LongOrShort'][2] }} </div> 
+              {% else %}
+                <div class="font_LEMON_MILK_LongShort" style="background-color: #ef454a; color: #fff;"> {{ last_list['LongOrShort'][2] }} </div>
+              {% endif %}     <!-- LONG or SHORT -->
+            </div>
+            <div class="Leverage">
+              <div class="font_size_LEMON_MILK">Cross {{ last_list['Leverage'][2] }}x</div>  <!-- Leverage -->
+            </div>
+          </div>
+
+
+          <div class="start_and_mark">
+
+            <div class="start_price">
+              <div class="font_size_LEMON_MILK"> Start Place </div>   
+              <div class="mini-border"></div>
+              <div class="num_size_LEMON_MILK"> {{ last_list['StartPlace'][2] }} </div>     <!-- START PLACE -->
+            </div>
+
+            <div class="mark_price">
+              <div class="font_size_LEMON_MILK"> Mark Price </div>
+              <div class="mini-border"></div>
+              <div class="num_size_LEMON_MILK"> {{ last_list['MarkPrice'][2] }} </div>     <!-- MARK PRICE -->
+            </div>
+          </div>
+        </div>
+
+        <div class="result_info">
+
+          <div class="procent">
+          {% if last_list['Procent'][2] != None %}
+            {% if last_list['Procent'][2] >= 0 %}
+              <div class="font_LEMON_MILK" style="font-size: 4vw; color: #20b26c;">{{ last_list['Procent'][2] }}%</div>
+            {% else %}
+              <div class="font_LEMON_MILK" style="font-size: 4vw; color: #ef454a;">{{ last_list['Procent'][2] }}%</div>
+            {% endif %}     <!-- LONG or SHORT -->
+          {% else %}
+            <div class="font_LEMON_MILK" style="font-size: 4vw;">{{ last_list['Procent'][2] }}</div>
+          {% endif %}
+          </div>
+
+          <div class="end_positions">
+            <div class="stop_loss">
+              <div class="font_size_LEMON_MILK">Stop Loss</div>
+              <div class="mini-border"></div>
+              <div class="num_size_LEMON_MILK" style="color: #ef454a;">{{ last_list['StopLoss'][2] }}</div>
+            </div>
+            <div class="take_profit">
+              <div class="font_size_LEMON_MILK">Take Profit</div>
+              <div class="mini-border"></div>
+              <div class="num_size_LEMON_MILK" style="color: #20b26c;">{{ last_list['TakeProfit'][2] }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenDeal/AddPosition</title>
+  <link rel="stylesheet" href="{{ url_for('static' , filename='css/NextStep.css') }}">
+  <link rel="preload" href="MilasianCircaPERSONAL.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="LEMONMILKProFTR-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      background: var(--tg-theme-bg-color);
+    }
+  </style>
+</head>
+<body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('click', function(e) {
+        if (e.target.tagName.toLowerCase() !== 'input') {
+          document.activeElement.blur();
+        }
+      });
+    });
+  </script>
+  <script>
+    if (getComputedStyle(document.body).getPropertyValue('--tg-theme-bg-color') === '#000000') {
+      document.body.style.background = '#001b25';
+      document.documentElement.style.boxShadow = '0px 23px 20px -10px black inset';
+    }
+  </script>
+    <div class="login-box">
+      <div class="header-text">OpenDeal</div>
+      <div class="mini-border" style="margin-bottom: 70px;"></div>
+
+      {% if show_input %}
+        <form method="post" class="form-construct">
+            <div class="user-box">
+                <input type="text" name="ChannelName" id="ChannelName" required="">
+                <label>Channel Name</label>
+                <p class="mistake">{{ Same }}</p>
+            </div>
+            <button type="submit" id="btn" style="margin-top: 10px;">Submit</button>
+        </form>
+		<script>
+          let submitButton = document.getElementById('btn');
+          submitButton.addEventListener('click', function() {
+            let ChannelName = document.getElementById("ChannelName").value;
+            localStorage.setItem('ChannelName', ChannelName); // сохраняем ChannelName в Local Storage
+          });
+		</script>
+
+      {% else %}
+        <form method="post" class="form-construct">
+          <div class="user-box">
+            <p class="success" style="display: flex; justify-content: center;">Website added successfully</p>
+          </div>
+          <button type="submit" id="btn_mysite" style="width: 90px;">Website</button>
+        </form>
+        <script>
+          let tg = window.Telegram.WebApp;
+          let sumbit = document.getElementById('btn_mysite');
+          
+          sumbit.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+            let ChannelName = localStorage.getItem('ChannelName');
+            tg.sendData(ChannelName); 
+            });
+          
+        </script>
+      {% endif %}
+  </div>
+</body>
+</html>

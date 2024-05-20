@@ -1,0 +1,417 @@
+/* background: linear-gradient(#141e30, #243b55); */
+
+@font-face {
+    font-family: 'Milasian Circa PERSONAL';
+    src: url('MilasianCircaPERSONAL.woff2') format('woff2'),
+        url('MilasianCircaPERSONAL.woff') format('woff'),
+        url('MilasianCircaPERSONAL.svg#MilasianCircaPERSONAL') format('svg'),
+        url('MilasianCircaPERSONAL.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'LEMON MILK Pro FTR';
+    src: url('LEMONMILKProFTR-Regular.woff2') format('woff2'),
+        url('LEMONMILKProFTR-Regular.woff') format('woff'),
+        url('LEMONMILKProFTR-Regular.svg#LEMONMILKProFTR-Regular') format('svg'),
+        url('LEMONMILKProFTR-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+
+html {
+    height: 120%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.form-construct{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-border {
+    width: 14vw;
+    height: 1px; /* Указываем высоту линии */
+    margin-bottom: 15px;
+    background-color: #868a8f;
+}
+
+.header-text{
+    color: aliceblue;
+    font-family: 'Milasian Circa PERSONAL';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 7vw;
+    padding-top: 10px;
+    margin-bottom: 10px; /* Добавляем отступ вниз */
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 92%;
+    padding: 10px;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 15px;
+}
+
+/* _____------------ USER BOX -----------_____ */
+
+.mistake{
+    position: relative;
+    top: -22px;
+    font-size: 14px;
+    color: #ff4747;
+    font-family: 'LEMON MILK Pro FTR';
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.mistake_NonePos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #ff4747;
+    font-family: 'LEMON MILK Pro FTR';
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.success{
+    position: relative;
+    top: -15px;
+    font-size: 14px;
+    color: #00e690;
+    font-family: 'LEMON MILK Pro FTR';
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.login-box .user-box {
+    position: relative;
+    width: 100%;
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 0 8px;
+    font-size: 18px;
+    font-family: 'LEMON MILK Pro FTR';
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    -webkit-appearance: none; /* добавлено для исправления на iOS */
+    border-radius: 0;
+}
+.login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 18px;
+    font-family: 'LEMON MILK Pro FTR';
+    color: #fff;
+    pointer-events: none;
+    transition: .2s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+    top: -32px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 15px;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+  }
+  
+
+/* _____------------ BUTTON BOX -----------_____ */
+
+.login-box form button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: relative;
+    display: flex;
+	align-self: center;
+    padding: 12px 18px;
+	width: 80px;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'LEMON MILK Pro FTR';
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .1s;
+    margin-top: 20px;
+    letter-spacing: 4px;
+    border-radius: 12px;
+    border: 1px solid #fff;
+    }
+
+
+.login-box button:hover {
+    transition: .15s;
+    transform: translateY(0);
+    color: #fff;
+    border-radius: 12px;
+  	border: 1px solid #fff;
+    box-shadow: 0 0 5px #fff,
+                0 0 9px var(--tg-theme-bg-color),
+				0 0 14px var(--tg-theme-bg-color);
+}
+
+
+
+.login-box button:active {
+    transition: .15s;
+    transform: translateY(0);
+    color: var(--tg-theme-bg-color);
+    border-radius: 12px;
+  	border: 1px solid #fff;
+}
+
+
+
+
+
+
+/* _____------------ RADIO BOX -----------_____ */
+
+
+.Long_or_Short{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0px 5px;
+}
+
+/* _______________________________________ */
+
+::placeholder {color: #adb0b4;}
+
+.LongRadio {
+	display: inline-block;
+    width: 45%
+}
+.LongRadio input[type=radio] {
+	display: none;
+}
+.LongRadio label {
+  	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	display: flex;
+    justify-content: center;
+	cursor: pointer;
+	line-height: 30px;
+	border: 1px solid #00b37d;
+	border-radius: 12px;
+	user-select: none;
+	color: #0000;
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-family: 'LEMON MILK Pro FTR';
+    transition: .5s;
+}
+ 
+/* Checked */
+.LongRadio input[type=radio]:checked + label {
+	background: #00b37d;
+    color: #efefef;
+    transition: .5s;
+}
+ 
+/* Hover */
+.LongRadio label:hover {
+    background: #00b37d;
+    color: #fff;
+    border-radius: 12px;
+    transition: .5s;
+    box-shadow: 0 0 5px #00b37d,
+                0 0 25px #00b37d
+}
+
+ 
+/* Disabled */
+.LongRadio input[type=radio]:disabled + label {
+	background: #efefef;
+	color: #0000;
+    transition: .5s;
+}
+
+
+
+/* _______________________________________________________ */
+
+
+
+.ShortRadio {
+	display: inline-block;
+    width: 45%
+}
+.ShortRadio input[type=radio] {
+	display: none;
+}
+.ShortRadio label {
+  	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	display: flex;
+    justify-content: center;
+	cursor: pointer;
+	line-height: 30px;
+	border: 1px solid #ff3a3a;
+    color: #0000;
+	border-radius: 12px;
+	user-select: none;
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-family: 'LEMON MILK Pro FTR';
+    transition: .5s;
+}
+ 
+/* Checked */
+.ShortRadio input[type=radio]:checked + label {
+	background: #ff3a3a;
+    color: #efefef;
+    transition: .5s;
+}
+ 
+/* Hover */
+.ShortRadio label:hover {
+    background: #ff3a3a;
+    color: #fff;
+    border-radius: 12px;
+    transition: .5s;
+    box-shadow: 0 0 5px #ff3a3a,
+                0 0 25px #ff3a3a
+
+}
+
+ 
+/* Disabled */
+.ShortRadio input[type=radio]:disabled + label {
+	background: #efefef;
+	color: #0000;
+    transition: .5s;
+}
+
+/* _______________________________________________ */
+
+
+.user-box-more {
+    position: relative;
+    width: 100%;
+}
+
+.user-box-more input {
+    width: 100%;
+    padding: 10px 0 8px;
+    font-size: 18px;
+    font-family: 'LEMON MILK Pro FTR';
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.user-box-more label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 18px;
+    font-family: 'LEMON MILK Pro FTR';
+    color: #fff;
+    pointer-events: none;
+    transition: .2s;
+}
+
+.user-box-more input:focus ~ label,
+.user-box-more input:not(:placeholder-shown) ~ label{
+    top: -32px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 15px;
+}
+
+.user-box-more input::placeholder {
+    color: transparent;
+}
+
+.all_user_box_more {
+    display: none;
+    width: 100%;
+}
+
+/* .button_sumbit-flex{
+    display: flex;
+    align-items: center;
+} */
+
+/* _______________ checkbox ______________ */
+
+.item{
+    display: flex;
+    flex-direction: row;}
+
+.toggle-pill-dark input[type="checkbox"] {
+    display: none;
+  }
+  .toggle-pill-dark input[type="checkbox"] + label {
+    display: block;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: relative;
+    width: 3em;
+    height: 1.4em;
+    border-radius: 1em;
+    box-shadow: inset 0px 0px 5px rgba(100, 100, 100, 0.3);
+    cursor: pointer;
+    -webkit-transition: background 0.1s ease-in-out; 
+    transition: background 0.1s ease-in-out;
+  }
+  .toggle-pill-dark input[type="checkbox"] + label:before {
+    content: "";
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    background: #fff;
+    position: absolute;
+    left: 0.2em;
+    top: 0.2em;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  .toggle-pill-dark input[type="checkbox"]:checked + label:before {
+    background: #fff;
+    box-shadow: -2px 0px 5px rgba(100, 100, 100, 0.2);
+    left: 1.6em;
+    -webkit-transform: rotate(295deg);
+    transform: rotate(295deg);
+  }

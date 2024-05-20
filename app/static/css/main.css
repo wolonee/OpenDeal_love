@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Milasian Circa PERSONAL';
+    src: url('MilasianCircaPERSONAL.woff2') format('woff2'),
+        url('MilasianCircaPERSONAL.woff') format('woff'),
+        url('MilasianCircaPERSONAL.svg#MilasianCircaPERSONAL') format('svg'),
+        url('MilasianCircaPERSONAL.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'LEMON MILK Pro FTR';
+    src: url('LEMONMILKProFTR-Regular.woff2') format('woff2'),
+        url('LEMONMILKProFTR-Regular.woff') format('woff'),
+        url('LEMONMILKProFTR-Regular.svg#LEMONMILKProFTR-Regular') format('svg'),
+        url('LEMONMILKProFTR-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* background: linear-gradient(rgb(11,32,51), rgb(98, 205, 255)); */
+/* 
+rgb(11,32,51), rgb(98, 205, 255 */
+
+.main_flex_construct{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+
+}
+
+html {
+    height: 120%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.form-construct{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.border_end_conteiner{
+    width: 12.5vw;
+    height: 2px;
+    background-color: grey;
+    box-shadow: 0px 2px 5px rgba(219, 219, 219, 0.3); /* Добавляем тень */
+}
+
+.font_LEMON_MILK{
+    font-family: 'LEMON MILK Pro FTR';
+    color: aliceblue;
+}
+
+.font_size_LEMON_MILK{
+    font-family: 'LEMON MILK Pro FTR';
+    color: aliceblue;
+    font-size: 2.7vw;
+    margin-bottom: 15px;
+}
+
+.num_size_LEMON_MILK{
+    font-family: 'LEMON MILK Pro FTR';
+    color: aliceblue;
+    font-size: 2.7vw;
+}
+
+.font_LEMON_MILK_LongShort{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8vw;
+    height: 11px;
+    font-family: 'LEMON MILK Pro FTR';
+    margin-left: 1vw;
+    font-size: 2vw;
+    border-radius: 20px;
+
+}
+
+.footer-border {
+    display: flex;
+    width: 12.5vw;
+    height: 2px; /* Указываем высоту линии */
+    background-color: grey;
+    box-shadow: 0px 2px 5px rgba(219, 219, 219, 0.3); /* Добавляем тень */
+    margin-top: 20%;
+}
+
+footer{
+    width: 70%;
+    height: 30%;
+}
+
+/*  $$$$$$$$$$$$$$$$$$$$$$$$$    MAIN    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$   */
+
+.main{
+    width: 100%;
+}
+
+.conteiner_1{
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    flex-direction: column;
+    background-color: bg-red;
+}
+
+.conteiner_1_green{
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    background-image: radial-gradient(rgba(31, 255, 125, 0.8), rgba(95, 255, 148, 0.3));
+}
+
+.conteiner_2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 21px
+}
+
+.conteiner_3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 21px
+}
+
+.conteiner-border {
+    width: 80%;
+    height: 1px;
+    background-color: #8a8e90;
+    margin-left: 29px
+}
+
+.all_token_info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.all_start_position_info{
+    width: 44%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+
+.result_info{
+    width: 43%;
+    display: flex;
+    flex-direction: column;
+}
+
+.procent{
+    display: flex;
+    justify-content: center;
+}
+
+
+.end_positions{
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+/* .token_position_Leverage{
+
+} */
+
+.token_and_position{
+    display: flex;
+    align-items: center;
+}
+
+.start_and_mark{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+}
+
+.start_price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mark_price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stop_loss{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.take_profit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ChannelBoss-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input_ChannelBoss{
+    width: 40%;
+    height: 60px;
+    margin-top: 10%;
+    background-color: rgb(86,125,156);
+    border-radius: 40px;
+    border: solid 1px;
+    border-color: rgb(255, 255, 255);
+}
+
+.link_with_post{
+    display: flex;
+    justify-content: center;
+    padding-top: 16px;
+}
